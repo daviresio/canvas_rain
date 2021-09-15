@@ -1,7 +1,10 @@
+import 'dart:html';
+
 import 'package:canvas_rain/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  querySelector(".loading")?.remove();
   runApp(MyApp());
 }
 

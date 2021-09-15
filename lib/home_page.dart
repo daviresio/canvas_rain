@@ -34,10 +34,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
       final height = MediaQuery.of(context).size.height;
       final width = MediaQuery.of(context).size.width;
-
+      print(width ~/ 5);
       setState(() {
         drops = List.generate(
-          600,
+          width ~/ 5,
           (index) {
             final random = utils.randomInt(min: 0, max: 20).toDouble();
             final y = utils.randomInt(min: -height.toInt(), max: 0).toDouble();
@@ -72,12 +72,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               end: Alignment.bottomCenter,
             )),
           ),
-          CustomPaint(
-            painter: RainPainter(
-              drops,
-              _controller,
+          RepaintBoundary(
+            child: CustomPaint(
+              painter: RainPainter(
+                drops,
+                _controller,
+              ),
+              child: Container(),
             ),
-            child: Container(),
           ),
         ],
       ),
