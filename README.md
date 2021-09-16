@@ -8,5 +8,3 @@ a rain animation using custom paint.
 
 ### contact
 daviresio@gmail.com
-<br><br>
-https://www.linkedin.com/in/davi-resio-4ba0b9136/
